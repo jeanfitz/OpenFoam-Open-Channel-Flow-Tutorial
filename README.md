@@ -57,9 +57,20 @@ Information on interFoam solver can be found on openfoamwiki
 [interfoamwiki](http://openfoamwiki.net/index.php/Interfoam)
 ### 
 
+### Open Channel Tutorial Cases
+1. damBreak
+   -laminar 
+   -interFoam multiphase solver
+
+alpha.water post the screenshot here.
+
+2. weirOverflow
+   -RAS 
+   -turbulence model
 
 ### Environmental engineering applications using OpenFoam (Literature review)
 There are several studies that compare OpenFoam and FLOW-3D commercial CFD software in applications.
+
 
 
 ### References
