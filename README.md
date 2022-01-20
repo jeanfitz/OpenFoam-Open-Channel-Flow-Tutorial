@@ -18,7 +18,8 @@ weirOverflow tutorial.
 Certain additional parameter is needed in open channel flow.
 First, because the interface between water and air is a free surface need to track this over time.
 In these tutorials a new variable called alpha.water which denotes the.....
-We have $ 0 \le alpha.water \le 1.0$.
+We have 
+$ 0 \le alpha.water \le 1.0$.
 
 ### Mesh and boundary and initial conditions - Preprocessing
 Mesh....blockMeshDict
@@ -35,7 +36,13 @@ constant directory
 need to include g as a file, where the m/sec2... how is this used in the code?
 
 ### Solvers for open channel flow
-the finite volume method is used 
-
+The finite volume method is used in OpenFoam package to solve the governing PDE equations of Navier-Stokes.
+To this we add a variable to solve as discussed above
+interFoam solver (multiphase) 
+volume of fluid (VOF) method
 
 ### 
+
+
+### Environmental engineering applications using OpenFoam (Literature review)
+There are several studies that compare OpenFoam and FLOW-3D commercial CFD software in applications.
