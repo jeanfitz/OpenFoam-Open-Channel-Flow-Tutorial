@@ -59,7 +59,7 @@ Details on interFoam solver can be found on openfoamwiki:
 How to use the MULES multidimensional universal limiter notes included
 in release notes for Openfoam 2.3.0 where they changed the structure a bit.
 In our open channel cases the alpha.water need to make sure the variable bounded between zero and one?
-[MULESreleasenotes](https://openfoam.org/release
+[MULESreleasenotes](https://openfoam.org/release/2-3-0/multiphase/)
 
 ### 
 
