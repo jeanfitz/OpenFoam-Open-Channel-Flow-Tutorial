@@ -11,9 +11,9 @@ in environmental engineering (Liu and Zhang).
 Fluent and other commercial packages are available but OpenFoam is 
 free and is useful as the details and source can be modified by the user. 
 
-### Physics of open channel flow
+1. Physics of open channel flow
 Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, turbulent flow. For small Re, we have laminar flow.
-there is another dimensionless variable key to open channel flow.
+There is another dimensionless variable key to open channel flow. Key body force is gravity.
 Since open channel flow there is a free surface between the water and the air (atmosphere), Froude number = U/sqrt(gL).
 
 If Froude number
@@ -21,11 +21,12 @@ in application write Fr_1 for the incoming flow Froude number.
 The critical Froude number.
 For hydraulic jump a type of flow where ....
 
-### Tutorial cases
+2. Open channel Tutorial cases
 There are several open channel flow tutorial cases that come with OpenFoam including the
 damBreak tutorial and
 weirOverflow tutorial.
 
+3. Setting up open channel flow cases ###
 Certain additional parameter is needed in open channel flow.
 First, because the interface between water and air is a free surface need to track this over time.
 In these tutorials a new variable called alpha.water which denotes the.....
@@ -52,6 +53,8 @@ To this we add a variable to solve as discussed above
 interFoam solver (multiphase) 
 volume of fluid (VOF) method
 
+Information on interFoam solver can be found on openfoamwiki
+[interfoamwiki](http://openfoamwiki.net/index.php/Interfoam)
 ### 
 
 
