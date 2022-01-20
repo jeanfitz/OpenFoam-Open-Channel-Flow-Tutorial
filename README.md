@@ -14,7 +14,7 @@ free and is useful as the details and source can be modified by the user.
 ### Physics of open channel flow
 Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, turbulent flow. For small Re, we have laminar flow.
 there is another dimensionless variable key to open channel flow.
-Since open channel flow there is a free surface between the water and the air (atmosphere), Froude number Fr = U/\sqrt(gL). h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
+Since open channel flow there is a free surface between the water and the air (atmosphere), Froude number h<sub>Fr = U/&\sqrt(gL). h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
 If Froude number
 in application write Fr_1 for the incoming flow Froude number.
 The critical Froude number.
