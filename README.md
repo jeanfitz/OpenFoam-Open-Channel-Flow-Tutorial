@@ -1,4 +1,4 @@
-![](0330211418a_resized.jpg) Mystic River near Alewife Brook. Arlington, Mass.
+![](0330211418a_resized.jpg) Mystic River near Alewife Brook. 
 # OpenFoam-Open-Channel-Flow-Tutorial
 This tutorial describes simulating open channel flow in OpenFoam with environmental application.
 
