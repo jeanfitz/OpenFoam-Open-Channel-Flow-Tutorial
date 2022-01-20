@@ -55,7 +55,7 @@ To this we add a variable to solve as discussed above
 interFoam solver (multiphase) 
 volume of fluid (VOF) method
 
-Details on interFoam solver can be found on openfoamwiki:
+Details on interFoam solver including the additional euqations can be found on openfoamwiki:
 [interfoamwiki](http://openfoamwiki.net/index.php/InterFoam)
 
 How to use the MULES multidimensional universal limiter notes included
@@ -81,6 +81,8 @@ alpha.water post the screenshot here.
 2. weirOverflow
    -RAS 
    -turbulence model
+   
+![weirOverflow](weirOverflow.png)
 
 ### Environmental engineering applications using OpenFoam (Literature review)
 There are several studies that compare OpenFoam and FLOW-3D commercial CFD software in applications.
