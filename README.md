@@ -54,7 +54,7 @@ interFoam solver (multiphase)
 volume of fluid (VOF) method
 
 Information on interFoam solver can be found on openfoamwiki
-[interfoamwiki](http://openfoamwiki.net/index.php/Interfoam)
+[interfoamwiki](http://openfoamwiki.net/index.php/InterFoam)
 ### 
 
 ### Open Channel Tutorial Cases
