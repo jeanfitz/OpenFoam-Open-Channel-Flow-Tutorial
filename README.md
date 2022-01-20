@@ -73,6 +73,10 @@ These cases are under multiphase directory in tutorial directory.
    -interFoam multiphase solver
 
 alpha.water post the screenshot here.
+![Alpha.water](damBreak_alphawatertimept5.png)
+
+
+
 
 2. weirOverflow
    -RAS 
