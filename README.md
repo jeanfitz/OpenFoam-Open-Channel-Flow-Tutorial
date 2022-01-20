@@ -75,7 +75,9 @@ These cases are under multiphase directory in tutorial directory.
 alpha.water post the screenshot here.
 ![Alpha.water](damBreak_alphawatertimept5.png)
 
-
+A drawback of VOF (volume of fluid method) is the delineation of the water surface which is needed for depth averaged or other output variables of interest.
+The free surface can be considered the level set of alpha=0.5.  
+One test is to increase the mesh (mesh refinement).
 
 
 2. weirOverflow
