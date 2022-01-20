@@ -60,3 +60,22 @@ Information on interFoam solver can be found on openfoamwiki
 
 ### Environmental engineering applications using OpenFoam (Literature review)
 There are several studies that compare OpenFoam and FLOW-3D commercial CFD software in applications.
+
+
+### References
+
+Granger, R.A., Fluid Mechanics, Dover, 1995.
+
+Hemida, Hasssan, OpenFOAM tutorial: Free surface tutorial using interFoam and rasInterFoam, Chalmers University, April 2008.
+
+Leakey, Shannon, Inlets, outlets and post-processing for modeling open-channel flow with the volume of fluid method, Chalmers University, Dec. 2019.
+
+
+Liu, X. Ph.D., P.E., and Jie Zhang, Ph.D., American Society of Civil Engineers. eds.,Computational Fluid Dynamics: Applications in Water, Wastewater and Stormwater Treatment, 224pp, 2019.
+
+OpenFOAM 2.3.0: Multiphase modeling, Predictor-corrector semi-implicit MULES, Feb. 17, 2014 blog at openfoam.org.
+
+Young, D.Y., Munson, B. R., Okiishi, T.M. A brief introduction to fluid mechanics, 3rd edition, John Wiley and Sons, 2004.
+
+
+
