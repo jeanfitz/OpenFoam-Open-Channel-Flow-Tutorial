@@ -82,7 +82,7 @@ alpha.water post the screenshot here.
    -RAS 
    -turbulence model
    
-![weirOverflow](weirOverflow.png)
+![weirOverflow](weirtutorial.png)
 
 ### Environmental engineering applications using OpenFoam (Literature review)
 There are several studies that compare OpenFoam and FLOW-3D commercial CFD software in applications.
