@@ -53,11 +53,19 @@ To this we add a variable to solve as discussed above
 interFoam solver (multiphase) 
 volume of fluid (VOF) method
 
-Information on interFoam solver can be found on openfoamwiki
+Details on interFoam solver can be found on openfoamwiki:
 [interfoamwiki](http://openfoamwiki.net/index.php/InterFoam)
+
+How to use the MULES multidimensional universal limiter notes included
+in release notes for Openfoam 2.3.0 where they changed the structure a bit.
+In our open channel cases the alpha.water need to make sure the variable bounded between zero and one?
+[MULESreleasenotes](https://openfoam.org/release
+
 ### 
 
 ### Open Channel Tutorial Cases
+These cases are under multiphase directory in tutorial directory.
+
 1. damBreak
    -laminar 
    -interFoam multiphase solver
