@@ -98,7 +98,7 @@ These cases are under multiphase directory in tutorial director which comes with
    -laminar 
    -interFoam multiphase solver
 
-alpha.water post the screenshot here.
+alpha.water post the screenshot here. Time = 0.5 sec.
 ![Alpha.water](damBreak_alphawatertimept5.png)
 
 A drawback of VOF (volume of fluid method) is the delineation of the water surface which is needed for depth averaged or other output variables of interest.
@@ -113,8 +113,15 @@ checkMesh
 setFields
 interFoam
 
-Post screenshot here.
+Post screenshot here. Time = 0.5 sec.
 ![mesh](damBreak_mesh.png)
+
+The mesh refinement simulation took 761 seconds with dt=0.001 sec. The time discretization method is Euler. which according to the OpenFoam
+documentation is implicit, first order accurate, transient.
+
+Let us change the time discretization to dt=.01 sec. Do we need to take account the Courant number?
+or should we consider Backward which is implict, second order accurate, conditionally stable but not guaranteed boundedness?
+
 
 2. weirOverflow
    -RAS 
