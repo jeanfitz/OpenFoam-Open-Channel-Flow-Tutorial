@@ -62,17 +62,17 @@ We have
 $ 0 \le alpha.water \le 1.0$.
 
 ### Mesh and boundary and initial conditions - Preprocessing
-Mesh....blockMeshDict
+1. Mesh....blockMeshDict
 when creating the mesh for the problem, we need to in blockMeshDict file have the top boundary (wall)
 of domain be atmosphere.
 
-Initial Conditions as with any variable to solve for in simulation, we need to set alpha.water as initial condtion in the domain. 
-How to do this in openFoam
+2. Initial Conditions as with any variable to solve for in simulation, we need to set alpha.water as initial condtion in the domain. 
 
-Boundary conditions
+
+3. Boundary conditions
 the patch atmosphere
 
-constant directory
+4. constant directory
 need to include g as a file, where the m/sec2... how is this used in the code?
 
 ### Solvers for open channel flow
@@ -92,11 +92,12 @@ In our open channel cases the alpha.water need to make sure the variable bounded
 ### 
 
 ### Open Channel Tutorial Cases
-These cases are under multiphase directory in tutorial director which comes with OpenFoam.
+These cases are under multiphase directory in tutorial director which comes with OpenFoam. These are incompressible
+transient cases.
 
 1. damBreak
-   -laminar 
-   -interFoam multiphase solver
+   *laminar 
+   *interFoam multiphase solver
 
 alpha.water post the screenshot here. Time = 0.5 sec.
 ![Alpha.water](damBreak_alphawatertimept5.png)
@@ -108,22 +109,6 @@ One test is to increase the mesh (mesh refinement).
 We modify the blockMeshDict file to double the cells of the hex elements. We also check the mesh to make sure it is legal and we didn't make a mistake
 in modifying blockMeshDict file.
 
-blocks
-(
- //    hex (0 1 5 4 12 13 17 16) (23 8 1) simpleGrading (1 1 1)
- //   hex (2 3 7 6 14 15 19 18) (19 8 1) simpleGrading (1 1 1)
- //   hex (4 5 9 8 16 17 21 20) (23 42 1) simpleGrading (1 1 1)
- //   hex (5 6 10 9 17 18 22 21) (4 42 1) simpleGrading (1 1 1)
- //   hex (6 7 11 10 18 19 23 22) (19 42 1) simpleGrading (1 1 1)
- // Double the mesh resolution
-    hex (0 1 5 4 12 13 17 16) (46 16 1) simpleGrading (1 1 1)
-   hex (2 3 7 6 14 15 19 18) (38 16 1) simpleGrading (1 1 1)
-   hex (4 5 9 8 16 17 21 20) (46 84 1) simpleGrading (1 1 1)
-   hex (5 6 10 9 17 18 22 21) (8 84 1) simpleGrading (1 1 1)
-   hex (6 7 11 10 18 19 23 22) (38 84 1) simpleGrading (1 1 1)
-
-);
-
 Run the following commands.
 
 1. blockMesh
@@ -131,7 +116,7 @@ Run the following commands.
 3. setFields
 4. interFoam
 
-Post screenshot here. alpha.water (interpolated) Time = 0.5 sec.
+A screenshot here. alpha.water (interpolated) Time = 0.5 sec.
 ![mesh](damBreak_mesh.png)
 
 The mesh refinement simulation took 761 seconds with dt=0.001 sec. The time discretization method is Euler. which according to the OpenFoam
@@ -143,8 +128,8 @@ We modify the controlDict file to change the time step.
 
 
 2. weirOverflow
-   -RAS 
-   -turbulence model
+   * RAS 
+   * turbulence model
    
 ![weirOverflow](weirtutorial.png)
 
