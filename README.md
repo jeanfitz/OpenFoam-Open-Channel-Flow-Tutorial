@@ -12,8 +12,8 @@ Disadvantages of CFD
    * uncertainties related to discretization, mesh, physical model
    * user error of software packages
 
-OpenFoam can easily be run on multiprocessors on a laptop or desktop, making widely available 3D turbulence
-modeling, either RAS or LES. As sensors become cheap and Internet of things data go online it will be useful to build
+OpenFoam can easily be run on multiprocessors on a laptop or desktop, making transient 3D turbulence
+modeling widely available, either RAS or LES. As sensors become cheap and Internet of things data go online it will be useful to build
 so-called digital twins of river, dam and stormwater systems. CFD models can help. Control of sensors and devices online are also becoming
 a reality in real urban hydraulic systems.
 
@@ -29,11 +29,16 @@ free and is useful as the details and source can be modified by the user.
 
 1. Physics of open channel flow
 
+ * Gravity is a key element 
+
 Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, turbulent flow. For small Re, we have laminar flow.
 There is another dimensionless variable key to open channel flow. Key body force is gravity.
 Since open channel flow there is a free surface between the water and the air (atmosphere), Froude number = U/sqrt(gL).
 
-If Froude number
+* Multiphase (two different fluids) air and water
+* 
+
+ * Froude number
 in application write Fr_1 for the incoming flow Froude number.
 The critical Froude number.
 For hydraulic jump a type of flow where ....
