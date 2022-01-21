@@ -36,9 +36,17 @@ There is another dimensionless variable key to open channel flow. Key body force
 Since open channel flow there is a free surface between the water and the air (atmosphere), Froude number = U/sqrt(gL).
 
 * Multiphase (two different fluids) air and water
-* 
+
+The viscosity of air and water is X and X respectively.
+Obviously the density of water is XXX while density of air is about XXX.
+The interface between the atmosphere and water surface needs to be tracked.
+As in most CFD the absolute pressure is not required? For example the atmospheric pressure changes hour by hour. But we
+don't model that.
+
+The additional equation to track the air/water interface is discussed below in Solvers.
 
  * Froude number
+ 
 in application write Fr_1 for the incoming flow Froude number.
 The critical Froude number.
 For hydraulic jump a type of flow where ....
