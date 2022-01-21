@@ -31,25 +31,22 @@ free and is useful as the details and source can be modified by the user.
 
  * Gravity is a key element 
 
-Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, turbulent flow. For small Re, we have laminar flow.
-There is another dimensionless variable key to open channel flow. Key body force is gravity.
-Since open channel flow there is a free surface between the water and the air (atmosphere), Froude number = U/sqrt(gL).
+Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
+There is another dimensionless variable key to open channel flow where the key body force is gravity.
+Since open channel flow there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
+g gravitational acceleration, and L characteristic water depth.
 
 * Multiphase (two different fluids) air and water
 
 The viscosity of air and water is X and X respectively.
 Obviously the density of water is XXX while density of air is about XXX.
 The interface between the atmosphere and water surface needs to be tracked.
-As in most CFD the absolute pressure is not required? For example the atmospheric pressure changes hour by hour. But we
-don't model that.
-
 The additional equation to track the air/water interface is discussed below in Solvers.
 
- * Froude number
- 
-in application write Fr_1 for the incoming flow Froude number.
-The critical Froude number.
-For hydraulic jump a type of flow where ....
+The Froude number is important. 
+in application we write Fr_1 for the incoming flow Froude number.
+The critical Froude number is important for
+hydraulic jump applications see Literature review below.
 
 2. Open channel Tutorial cases
 
