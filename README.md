@@ -107,6 +107,23 @@ One test is to increase the mesh (mesh refinement).
 
 We modify the blockMeshDict file to double the cells of the hex elements. We also check the mesh to make sure it is legal and we didn't make a mistake
 in modifying blockMeshDict file.
+
+blocks
+(
+ //    hex (0 1 5 4 12 13 17 16) (23 8 1) simpleGrading (1 1 1)
+ //   hex (2 3 7 6 14 15 19 18) (19 8 1) simpleGrading (1 1 1)
+ //   hex (4 5 9 8 16 17 21 20) (23 42 1) simpleGrading (1 1 1)
+ //   hex (5 6 10 9 17 18 22 21) (4 42 1) simpleGrading (1 1 1)
+ //   hex (6 7 11 10 18 19 23 22) (19 42 1) simpleGrading (1 1 1)
+ // Double the mesh resolution
+    hex (0 1 5 4 12 13 17 16) (46 16 1) simpleGrading (1 1 1)
+   hex (2 3 7 6 14 15 19 18) (38 16 1) simpleGrading (1 1 1)
+   hex (4 5 9 8 16 17 21 20) (46 84 1) simpleGrading (1 1 1)
+   hex (5 6 10 9 17 18 22 21) (8 84 1) simpleGrading (1 1 1)
+   hex (6 7 11 10 18 19 23 22) (38 84 1) simpleGrading (1 1 1)
+
+);
+
 Run the following commands.
 
 1. blockMesh
