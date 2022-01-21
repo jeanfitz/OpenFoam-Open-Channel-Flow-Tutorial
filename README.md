@@ -109,10 +109,10 @@ We modify the blockMeshDict file to double the cells of the hex elements. We als
 in modifying blockMeshDict file.
 Run the following commands.
 
-*blockMesh
-*checkMesh
-*setFields
-*interFoam
+1. blockMesh
+2. checkMesh
+3. setFields
+4. interFoam
 
 Post screenshot here. alpha.water (interpolated) Time = 0.5 sec.
 ![mesh](damBreak_mesh.png)
