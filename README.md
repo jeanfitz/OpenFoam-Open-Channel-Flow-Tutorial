@@ -1,6 +1,16 @@
 ![](0330211418a_resized.jpg) Mystic River near Alewife Brook. 
-# OpenFoam-Open-Channel-Flow-Tutorial
-This tutorial describes simulating open channel flow in OpenFoam with environmental application.
+# OpenFoam-Open-Channel-Flow-Tutorial 
+This tutorial describes simulating open channel flow in OpenFoam open source CFD package with environmental application.
+It is important to keep in mind that CFD is one tool to study, design, or optimize environmental engineering applications.
+There is also physical models and in situ measurement.
+
+Advantages of CFD
+   * cheap compared to physical models
+   * sensitivity analysis is easy to perform
+   
+Disadvantages of CFD
+   * uncertainties related to discretization, mesh, physical model
+   * user error of software packages
 
 ## Open channel flow
 Open channel flow is a distinct category of fluid flow (Young et al., Granger)
@@ -88,9 +98,12 @@ One test is to increase the mesh (mesh refinement).
 ![weirOverflow](weirtutorial.png)
 
 ### Environmental engineering applications using OpenFoam (Literature review)
-There are several studies that compare OpenFoam and FLOW-3D commercial CFD software in applications.
+There are several studies that compare OpenFoam and commercial CFD software in applications.
 
+Report
+General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. A
 
+Assessment of spillway modeling Canadian Journal of Civil engineering 35(12, 2008
 
 ### References
 
