@@ -48,11 +48,11 @@ in application we write Fr_1 for the incoming flow Froude number.
 The critical Froude number is important for
 hydraulic jump applications see Literature review below.
 
-2. Open channel Tutorial cases
+2. Open channel Tutorial cases - Sensitivity Analysis
 
 There are several open channel flow tutorial cases that come with OpenFoam including the
 damBreak tutorial and
-weirOverflow tutorial.
+weirOverflow tutorial. We shall perform sensitivity analysis changing some mesh, solver and other parts of the cases.
 
 3. Setting up open channel flow cases ###
 Certain additional parameter is needed in open channel flow.
@@ -105,7 +105,15 @@ A drawback of VOF (volume of fluid method) is the delineation of the water surfa
 The free surface can be considered the level set of alpha=0.5.  
 One test is to increase the mesh (mesh refinement).
 
+We modify the blockMeshDict file to double the cells of the hex elements. We also check the mesh to make sure it is legal and we didn't make a mistake
+in modifying blockMeshDict file.
 
+>blockMesh
+>checkMesh
+>setFields
+>interFoam
+
+![alpha.water](dambreak_alphawatertimept5_mesh.png)
 2. weirOverflow
    -RAS 
    -turbulence model
