@@ -114,7 +114,7 @@ setFields
 interFoam
 
 Post screenshot here.
-![mesh](damBreak_alphawatertimept5_mesh.png)
+![mesh](damBreak_mesh.png)
 
 2. weirOverflow
    -RAS 
