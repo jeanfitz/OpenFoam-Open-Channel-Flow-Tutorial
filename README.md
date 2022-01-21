@@ -113,7 +113,9 @@ in modifying blockMeshDict file.
 >setFields
 >interFoam
 
-![mesh](damBreak_alphawatertimept5_mesh.png)
+Post screenshot here.
+!(damBreak_alphawatertimept5_mesh.png)
+
 2. weirOverflow
    -RAS 
    -turbulence model
