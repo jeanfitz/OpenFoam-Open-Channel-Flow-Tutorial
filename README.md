@@ -12,6 +12,11 @@ Disadvantages of CFD
    * uncertainties related to discretization, mesh, physical model
    * user error of software packages
 
+OpenFoam can easily be run on multiprocessors on a laptop or desktop, making widely available 3D turbulence
+modeling, either RAS or LES. As sensors become cheap and Internet of things data go online it will be useful to build
+so-called digital twins of river, dam and stormwater systems. CFD models can help. Control of sensors and devices online are also becoming
+a reality in real urban hydraulic systems.
+
 ## Open channel flow
 Open channel flow is a distinct category of fluid flow (Young et al., Granger)
 where there is an interface between the water and atmosphere which
