@@ -108,13 +108,13 @@ One test is to increase the mesh (mesh refinement).
 We modify the blockMeshDict file to double the cells of the hex elements. We also check the mesh to make sure it is legal and we didn't make a mistake
 in modifying blockMeshDict file.
 
->blockMesh
->checkMesh
->setFields
->interFoam
+blockMesh
+checkMesh
+setFields
+interFoam
 
 Post screenshot here.
-!(damBreak_alphawatertimept5_mesh.png)
+![mesh](damBreak_alphawatertimept5_mesh.png)
 
 2. weirOverflow
    -RAS 
