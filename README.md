@@ -67,7 +67,7 @@ In our open channel cases the alpha.water need to make sure the variable bounded
 ### 
 
 ### Open Channel Tutorial Cases
-These cases are under multiphase directory in tutorial directory.
+These cases are under multiphase directory in tutorial director which comes with OpenFoam.
 
 1. damBreak
    -laminar 
