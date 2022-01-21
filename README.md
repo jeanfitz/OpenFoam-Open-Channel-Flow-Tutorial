@@ -115,13 +115,18 @@ One test is to increase the mesh (mesh refinement).
    
 ![weirOverflow](weirtutorial.png)
 
-### Environmental engineering applications using OpenFoam (Literature review)
-There are several studies that compare OpenFoam and commercial CFD software in applications.
+### Environmental engineering applications using OpenFoam or other CFD package (Literature review)
+There are several studies that compare OpenFoam and commercial CFD software in applications. Flow-3D is a commercial package focused on the free surface interface. 
+ANSYS Fluent commercial package has also been used. This is not meant to be an exhaustive literature review but illustrative.
 
-Report
-General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. A
+OpenFoam vs. FLOW-3D: a comparison 2022.
 
-Assessment of spillway modeling Canadian Journal of Civil engineering 35(12, 2008
+Characterization of structural properties J. Hydraulic Engineering, (146) 12, 2020.
+
+General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. Arunkumar and S.P. Simmovic, Report no. 098,oct 2017.
+
+Chanel, P.G. and J. Doering, Assessment of spillway modeling using computational fluid dynamics, Canadian Journal of Civil engineering 35(12), 2008.
+The Flow-3D package is used to simulate discharge and simulations are compared to physical models.
 
 ### References
 
