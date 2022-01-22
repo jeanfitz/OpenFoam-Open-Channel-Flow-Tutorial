@@ -22,12 +22,15 @@ Open channel flow is a distinct category of fluid flow (Young et al., Granger)
 where there is an interface between the water and atmosphere which
 is not assumed constant and also called free surface flow.
 This flow type includes many applications in environmental,
-coastal, hydraulic and ecological engineering such as dams, weirs, spillways, fish passages, boat wakes and hydraulic structures. There is increased use of CFD
+coastal, hydraulic and ecological engineering such as dams, weirs, spillways, fish passages, and hydraulic structures. There is increased use of CFD
 in environmental engineering (Liu and Zhang).
 Fluent and other commercial packages are available but OpenFoam is 
 free and is useful as the details and source can be modified by the user. 
 
-1. Physics of open channel flow
+1. Physics of Open Channel Flow
+> As for any flow geometry, open channel flow may be 
+> 
+
 
  * Gravity is a key element 
 
@@ -50,9 +53,10 @@ hydraulic jump applications see Literature review below.
 
 2. Open channel Tutorial cases - Sensitivity Analysis
 
-There are several open channel flow tutorial cases that come with OpenFoam including the
-damBreak tutorial and
-weirOverflow tutorial. We shall perform sensitivity analysis changing some mesh, solver and other parts of the cases.
+There are several open channel flow tutorial cases that come with OpenFoam.
+We focus on the **damBreak** tutorial and
+**weirOverflow**
+tutorial. We shall perform sensitivity analysis changing some mesh, solver and other parts of the cases.
 
 3. Setting up open channel flow cases ###
 Certain additional parameter is needed in open channel flow.
