@@ -23,20 +23,24 @@ where there is an interface between the water and atmosphere which
 is not assumed constant and also called free surface flow.
 This flow type includes many applications in environmental,
 coastal, hydraulic and ecological engineering such as dams, weirs, spillways, fish passages, and hydraulic structures. There is increased use of CFD
-in environmental engineering (Liu and Zhang).
+in environmental engineering (Liu and Zhang 2019).
 Fluent and other commercial packages are available but OpenFoam is 
 free and is useful as the details and source can be modified by the user. 
 
 1. Physics of Open Channel Flow
-> As for any flow geometry, open channel flow may be 
-> 
+
+According to Young et al.:
+> As for any flow geometry, open-channel flow may be _laminar_, _transitional_ or _turbulent_, depending on various conditions involved.
+> Which type of flow occurs depends on the Reynolds number Re = rhoVR_h/mu, where V is the average velocity of the fluid and R_h is the hydraulic
+> radius of the channel...Since most open-channel flows involve water (which has a fairly small viscosity) and have relatively large characteristic
+> lengths, it is uncommon to have laminar open-channel flows.
 
 
  * Gravity is a key element 
 
-Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
+//Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia //force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
 There is another dimensionless variable key to open channel flow where the key body force is gravity.
-Since open channel flow there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
+Since in open channel flow there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
 g gravitational acceleration, and L characteristic water depth.
 
 * Multiphase (two different fluids) air and water
