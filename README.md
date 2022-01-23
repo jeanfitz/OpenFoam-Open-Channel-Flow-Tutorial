@@ -137,6 +137,12 @@ We modify the controlDict file to change the time step.
    * turbulence model
    * k-\epsilon model   
       For C coefficients, the RASModels::kEpsilon uses for the default values Lander and (1974). 
+      In this model,
+      νt=Cμk^2/ϵ 
+where
+        νt	=	Turbulent viscosity [ m2s−1]
+        Cμ 	=	Model coefficient for the turbulent viscosity [-]
+
    
 ![weirOverflow](weirtutorial.png)
 
