@@ -10,7 +10,7 @@ Advantages of CFD
    
 Disadvantages of CFD
    * uncertainties related to discretization, mesh, physical model
-   * user error of software packages
+   * potential user error of software packages
 
 OpenFoam can easily be run on multiprocessors on a laptop or desktop, making transient 3D turbulence
 modeling widely available, either RAS or LES. As sensors become cheap and Internet of things data go online it will be useful to build
