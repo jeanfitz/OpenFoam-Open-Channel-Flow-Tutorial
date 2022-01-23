@@ -132,8 +132,11 @@ We modify the controlDict file to change the time step.
 
 
 2. weirOverflow
+  This tutorial uses a turbulence model, kEpsilon (k-e) two equation model.
    * RAS 
    * turbulence model
+   * k-\epsilon model   
+      For C coefficients, the RASModels::kEpsilon uses for the default values Lander and (1974). 
    
 ![weirOverflow](weirtutorial.png)
 
@@ -152,9 +155,13 @@ The Flow-3D package is used to simulate discharge and simulations are compared t
 
 ### References
 
+
+
 Granger, R.A., Fluid Mechanics, Dover, 1995.
 
 Hemida, Hasssan, OpenFOAM tutorial: Free surface tutorial using interFoam and rasInterFoam, Chalmers University, April 2008.
+
+B.E. Launder and D.B. Spalding. The numerical computation of turbulent flows. Computer methods in applied mechanics and engineering, 3(2):269–289, 1974.
 
 Leakey, Shannon, Inlets, outlets and post-processing for modeling open-channel flow with the volume of fluid method, Chalmers University, Dec. 2019.
 
