@@ -35,6 +35,8 @@ According to Young et al.:
 > radius of the channel...Since most open-channel flows involve water (which has a fairly small viscosity) and have relatively large characteristic
 > lengths, it is uncommon to have laminar open-channel flows.
 
+The hydraulic radius R_h is defined as R_h = A/P where A is the area of the cross-section and P is the wetted perimeter (the length of the perimeter of the of the cross section in contact with the fluid).
+
 
  * Gravity is a key element 
 
