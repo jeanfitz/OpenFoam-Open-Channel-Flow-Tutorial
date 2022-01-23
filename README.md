@@ -40,7 +40,7 @@ The hydraulic radius R_h is defined as R_h = A/P where A is the area of the cros
 
  * Gravity is a key element 
 
-//Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia //force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
+Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
 There is another dimensionless variable key to open channel flow where the key body force is gravity.
 Since in open channel flow there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
 g gravitational acceleration, and L characteristic water depth.
