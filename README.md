@@ -19,8 +19,8 @@ a reality in real urban hydraulic systems.
 
 ## Open channel flow
 Open channel flow is a distinct category of fluid flow (Young et al., Granger)
-where there is an interface between the water and atmosphere which
-is not assumed constant and also called free surface flow.
+where there is an interface between the water and atmosphere. 
+This interface is not assumed constant and this category is also called free surface flow. 
 This flow type includes many applications in environmental,
 coastal, hydraulic and ecological engineering such as dams, weirs, spillways, fish passages, and hydraulic structures. There is increased use of CFD
 in environmental engineering (Liu and Zhang 2019).
@@ -48,11 +48,11 @@ g gravitational acceleration, and L characteristic water depth.
 * Multiphase (two different fluids) air and water
 
 The viscosity of air and water is X and X respectively.
-Obviously the density of water is XXX while density of air is about XXX.
+The density of water is XXX while density of air is about XXX.
 The interface between the atmosphere and water surface needs to be tracked.
 The additional equation to track the air/water interface is discussed below in Solvers.
 
-The Froude number is important. 
+The dimensionless Froude number is important. 
 in application we write Fr_1 for the incoming flow Froude number.
 The critical Froude number is important for
 hydraulic jump applications see Literature review below.
@@ -62,12 +62,12 @@ hydraulic jump applications see Literature review below.
 There are several open channel flow tutorial cases that come with OpenFoam.
 We focus on the **damBreak** tutorial and
 **weirOverflow**
-tutorial. We shall perform sensitivity analysis changing some mesh, solver and other parts of the cases.
+tutorial. We shall perform sensitivity analysis changing mesh, solver and other parts of the cases.
 
 3. Setting up open channel flow cases ###
 Certain additional parameter is needed in open channel flow.
 First, because the interface between water and air is a free surface need to track this over time.
-In these tutorials a new variable called alpha.water which denotes the.....
+A new variable called alpha.water which denotes the 
 We have 
 $ 0 \le alpha.water \le 1.0$.
 
