@@ -192,6 +192,7 @@ General Methodology for developing a CFD model for studying spillway hydraulics 
 Granger, R.A., Fluid Mechanics, Dover, 1995.
 
 Hemida, Hasssan, OpenFOAM tutorial: Free surface tutorial using interFoam and rasInterFoam, Chalmers University, April 2008.
+http://www.tfd.chalmers.se/~hani/kurser/OS_CFD_2007/HassanHemida/Hassan_Hemida_VOF.pdf
 
 Launder, B.E. and D.B. Spalding. The numerical computation of turbulent flows, Computer methods in applied mechanics and engineering, 3(2):269–289, 1974.
 
