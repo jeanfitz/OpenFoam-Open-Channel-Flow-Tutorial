@@ -42,15 +42,16 @@ The hydraulic radius R_h is defined as R_h = A/P where A is the area of the cros
 
 The Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of  the inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
 There is another dimensionless variable key to open channel flow where the key body force is gravity.
-Since there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
-g gravitational acceleration, and L characteristic water depth is important.
+Since there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U is velocity,
+g is gravitational acceleration, and L is characteristic water depth, is importnatn.
 In application we write Fr_1 for the incoming flow Froude number.
 The critical Froude number is important for
 hydraulic jump applications.
 
 * Multiphase (two different fluids) modeling of air and water
 
-The viscosity and density of air and water are different and are included in 
+The viscosity and density of air and water are different and are included in **transportProperties** file in the constant directory
+in OpenFOAM. The surface tension of water is also included in this file.
 The interface between the atmosphere and water surface needs to be tracked.
 The additional equation to track the air/water interface is discussed below in Solvers.
 
@@ -71,19 +72,18 @@ A new variable (field) called alpha.water which denotes the XXX.
 We have 
 $ 0 \le alpha.water \le 1.0$. The water surface is then considered where alpha = 0.5.
 
-### Mesh and boundary and initial conditions - Preprocessing
-1. Mesh....blockMeshDict
-when creating the mesh for the problem, we need to in blockMeshDict file have the top boundary (wall)
-of domain be atmosphere.
-
-2. Initial Conditions as with any variable to solve for in simulation, we need to set alpha.water as initial condtion in the domain. 
+### Preprocessing 
+1. Mesh and boundary conditions
+ When creating the mesh for the problem in system/blockMeshDict file, the top boundary is type atmosphere.
 
 
-3. Boundary conditions
-the patch atmosphere
+2. Initial Conditions 
+We need to set the alpha.water fields variable initial condition in the domain.
+This is done with the setFieldsDict file in the system directory with alpha.water where the default value is
+air of zero. The column of water in damBreak tutorial is set as alpha.water is one.
 
-4. constant directory
-need to include g as a file, where the m/sec2... how is this used in the code?
+3. Constant 
+We need to include g, gravitational acceleration, as a file in the constant directory.
 
 ### Solvers for open channel flow
 The finite volume method is used in OpenFoam package to solve the governing PDE equations of Navier-Stokes.
