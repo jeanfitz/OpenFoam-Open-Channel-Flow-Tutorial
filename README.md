@@ -43,7 +43,7 @@ The hydraulic radius R_h is defined as R_h = A/P where A is the area of the cros
 The Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of  the inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
 There is another dimensionless variable key to open channel flow where the key body force is gravity.
 Since there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U is velocity,
-g is gravitational acceleration, and L is characteristic water depth, is importnatn.
+g is gravitational acceleration, and L is characteristic water depth, is important.
 In application we write Fr_1 for the incoming flow Froude number.
 The critical Froude number is important for
 hydraulic jump applications.
@@ -53,7 +53,7 @@ hydraulic jump applications.
 The viscosity and density of air and water are different and are included in **transportProperties** file in the constant directory
 in OpenFOAM. The surface tension of water is also included in this file.
 The interface between the atmosphere and water surface needs to be tracked.
-The additional equation to track the air/water interface is discussed below in Solvers.
+The additional equation to track the air/water interface is discussed below.
 
 
 
@@ -68,48 +68,49 @@ tutorial. We shall perform sensitivity analysis changing mesh, solver and other 
 3. Setting up open channel flow cases ###
 Additional information is needed in open channel flow.
 Because the interface between water and air is a free surface, we need to track this over time.
-A new variable (field) called alpha.water which denotes the XXX.
+A new variable (field) called alpha.water which denotes the phase fraction where alpha=1 is water and alpha=0 is air.
 We have 
 $ 0 \le alpha.water \le 1.0$. The water surface is then considered where alpha = 0.5.
 
 ### Preprocessing 
 1. Mesh and boundary conditions
- When creating the mesh for the problem in system/blockMeshDict file, the top boundary is type atmosphere.
+ When creating the mesh for the problem in the system/blockMeshDict file, the top boundary is type atmosphere which comes with OpenFoam. 
 
 
 2. Initial Conditions 
 We need to set the alpha.water fields variable initial condition in the domain.
 This is done with the setFieldsDict file in the system directory with alpha.water where the default value is
-air of zero. The column of water in damBreak tutorial is set as alpha.water is one.
+air of zero. The initial column of water in the damBreak tutorial is set as alpha.water is one for example.
+
+The initial conditions for U and p_rgh variables set in the 0 directory have specific boundary conditions for the atmosphere, different
+than the walls.
+For example, for U, the walls have a no slip boundary condition but atmosphere has a pressureInletOutletVelocity boundary condition.
 
 3. Constant 
 We need to include g, gravitational acceleration, as a file in the constant directory.
 
-### Solvers for open channel flow
-The finite volume method is used in OpenFoam package to solve the governing PDE equations of Navier-Stokes.
-To this we add a variable to solve as discussed above
-interFoam solver (multiphase) 
-volume of fluid (VOF) method
+### Multiphase Solvers for open channel flow
+The finite volume method is used in the OpenFoam package to solve the governing PDE equations of Navier-Stokes.
+To this we add a variable to solve as discussed above, the phase fraction alpha.water in each cell.
+The interFoam solver volume of fluid (VOF) method is 
 
-Details on interFoam solver including the additional euqations can be found on openfoamwiki:
+Details on the interFoam solver including the additional equations can be found on openfoamwiki:
 [interfoamwiki](http://openfoamwiki.net/index.php/InterFoam)
-
-How to use the MULES multidimensional universal limiter notes included
-in release notes for Openfoam 2.3.0 where they changed the structure a bit.
-In our open channel cases the alpha.water need to make sure the variable bounded between zero and one?
+Specifics about the MULES multidimensional universal limiter notes is included
+in release notes for Openfoam 2.3.0.
 [MULESreleasenotes](https://openfoam.org/release/2-3-0/multiphase/)
 
 ### 
 
 ### Open Channel Tutorial Cases
-These cases are under multiphase directory in tutorial director which comes with OpenFoam. These are incompressible
+These cases are under the multiphase directory in tutorial director which comes with OpenFoam. These are incompressible
 transient cases.
 
 1. damBreak
    *laminar 
    *interFoam multiphase solver
 
-alpha.water post the screenshot here. Time = 0.5 sec.
+alpha.water phase fraction (dimensionless) Time = 0.5 sec.
 ![Alpha.water](damBreak_alphawatertimept5.png)
 
 A drawback of VOF (volume of fluid method) is the delineation of the water surface which is needed for depth averaged or other output variables of interest.
