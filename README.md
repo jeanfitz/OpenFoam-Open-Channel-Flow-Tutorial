@@ -2,7 +2,7 @@
 # OpenFoam-Open-Channel-Flow-Tutorial 
 This tutorial describes simulating open channel flow in OpenFoam open source CFD package with environmental application.
 It is important to keep in mind that CFD is one tool to study, design, or optimize environmental engineering applications.
-There is also physical models and in situ measurement.
+There are also physical models and in situ measurements.
 
 Advantages of CFD
    * cheap compared to physical models
@@ -19,8 +19,8 @@ a reality in real urban hydraulic systems.
 
 ## Open channel flow
 Open channel flow is a distinct category of fluid flow (Young et al., Granger)
-where there is an interface between the water and atmosphere. 
-This interface is not assumed constant and this category is also called free surface flow. 
+where there is an interface between the water and atmosphere.
+The interface is not assumed constant and this category of flow is also called free surface flow. 
 This flow type includes many applications in environmental,
 coastal, hydraulic and ecological engineering such as dams, weirs, spillways, fish passages, and hydraulic structures. There is increased use of CFD
 in environmental engineering (Liu and Zhang 2019).
@@ -40,22 +40,22 @@ The hydraulic radius R_h is defined as R_h = A/P where A is the area of the cros
 
  * Gravity is a key element 
 
-Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
+The Reynolds number is a dimensionless variable widely used in fluid mechanics which is defined as Re = rho UL/mu and can be interpreted as the ratio of  the inertia force over the viscous force. For large Re, we have turbulent flow. For small Re, we have laminar flow.
 There is another dimensionless variable key to open channel flow where the key body force is gravity.
-Since in open channel flow there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
-g gravitational acceleration, and L characteristic water depth.
+Since there is a free surface between the water and the air (atmosphere), the dimensionless Froude number = U/sqrt(gL), where U velocity,
+g gravitational acceleration, and L characteristic water depth is important.
+In application we write Fr_1 for the incoming flow Froude number.
+The critical Froude number is important for
+hydraulic jump applications.
 
-* Multiphase (two different fluids) air and water
+* Multiphase (two different fluids) modeling of air and water
 
-The viscosity of air and water is X and X respectively.
-The density of water is XXX while density of air is about XXX.
+The viscosity and density of air and water are different and are included in 
 The interface between the atmosphere and water surface needs to be tracked.
 The additional equation to track the air/water interface is discussed below in Solvers.
 
-The dimensionless Froude number is important. 
-in application we write Fr_1 for the incoming flow Froude number.
-The critical Froude number is important for
-hydraulic jump applications see Literature review below.
+
+
 
 2. Open channel Tutorial cases - Sensitivity Analysis
 
@@ -65,11 +65,11 @@ We focus on the **damBreak** tutorial and
 tutorial. We shall perform sensitivity analysis changing mesh, solver and other parts of the cases.
 
 3. Setting up open channel flow cases ###
-Certain additional parameter is needed in open channel flow.
-First, because the interface between water and air is a free surface need to track this over time.
-A new variable called alpha.water which denotes the 
+Additional information is needed in open channel flow.
+Because the interface between water and air is a free surface, we need to track this over time.
+A new variable (field) called alpha.water which denotes the XXX.
 We have 
-$ 0 \le alpha.water \le 1.0$.
+$ 0 \le alpha.water \le 1.0$. The water surface is then considered where alpha = 0.5.
 
 ### Mesh and boundary and initial conditions - Preprocessing
 1. Mesh....blockMeshDict
