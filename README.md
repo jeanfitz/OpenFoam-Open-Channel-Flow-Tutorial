@@ -153,17 +153,37 @@ where
 ![weirOverflow](weirtutorial.png)
 
 ### Environmental engineering applications using OpenFoam or other CFD package (Literature review)
-There are several studies that compare OpenFoam and commercial CFD software in applications. Flow-3D is a commercial package focused on the free surface interface. 
-ANSYS Fluent commercial package has also been used. This is not meant to be an exhaustive literature review but illustrative.
+OpenFoam studies or studies comparing OpenFOAM and commercial CFD software in environmental and hydraulic engineering have recently increased
+in the literature.
+Flow-3D is a commercial package focused on the free surface interface. 
+ANSYS Fluent commercial package has also been used. This is an illustrative literature review, not mean to be exhaustive.
 
-OpenFoam vs. FLOW-3D: a comparison 2022.
+#OpenFoam studies
 
-Characterization of structural properties J. Hydraulic Engineering, (146) 12, 2020.
+1. Model development in OpenFOAM to predict spillway jet regimes, J. Applied Water Engineering and Research (2015), Y. Yang, M. Politano, R. Laughery and L. Weber.
 
-General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. Arunkumar and S.P. Simmovic, Report no. 098,oct 2017.
-
+OpenFOAM using LES and detached eddy simulation was used to compare reduced scale model results. Total dissolved gas (TDG) can result in gas bubble disease in affected fish. Predicting spillway jet regimes is required.
+    Preprocessing: Mesh: Gridgen V15 used to create grids.
+    Solver: interFoam  (VOF)
+    Turbulence closure: LES with detached eddy simulation
+    
+# Flow-3D studies    
 Chanel, P.G. and J. Doering, Assessment of spillway modeling using computational fluid dynamics, Canadian Journal of Civil engineering 35(12), 2008.
 The Flow-3D package is used to simulate discharge and simulations are compared to physical models.
+
+
+# ANSYS Fluent studies
+General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. Arunkumar and S.P. Simmovic, Report no. 098,oct 2017.
+
+# Comparing OpenFOAM with FLOW-3D
+1. OpenFOAM vs. FLOW-3D: A comparative study of vertical slot fishway modeling, Ecological Engineering (174) 2022, J.F. Fuentes-Perez, A.L. Quaresma, A. Pinheiro, F. J. Sanz-Ronda.
+  Solver: interFoam (VOF)
+  turbulence closure: LES
+  
+  
+2. Characterization of structural properties in high Reynolds hydraulic jump based on CFD and physical modeling approaches, J. Hydraulic Engineering (146) 12, 2020, J. F. Macian-Perez, A. Bayon, R. Garcia-Bartual, P. Amparo Lopez-Jimenez, F.J. Valles-Moran.
+3. 
+  A classic hydraulic jump (Froude number 1 = 6) and Reynolds number 1 of 210,000 is simulated with both OpenFOAM and FLOW-3D and compared to experimental data designed for this purpose. THe conclusion is that both CFD codes represent the hydraulic jump variables accurately. There is difference in velocity distributiona nd pressure fluctuation differences but in general
 
 ### References
 
@@ -173,14 +193,15 @@ Granger, R.A., Fluid Mechanics, Dover, 1995.
 
 Hemida, Hasssan, OpenFOAM tutorial: Free surface tutorial using interFoam and rasInterFoam, Chalmers University, April 2008.
 
-B.E. Launder and D.B. Spalding. The numerical computation of turbulent flows. Computer methods in applied mechanics and engineering, 3(2):269–289, 1974.
+Launder, B.E. and D.B. Spalding. The numerical computation of turbulent flows, Computer methods in applied mechanics and engineering, 3(2):269–289, 1974.
 
-Leakey, Shannon, Inlets, outlets and post-processing for modeling open-channel flow with the volume of fluid method, Chalmers University, Dec. 2019.
-
+Leakey, Shannon, Inlets, outlets and post-processing for modeling open-channel flow with the volume of fluid method, Tutorial documentation, Chalmers University, Dec. 2019.
 
 Liu, X. Ph.D., P.E., and Jie Zhang, Ph.D., American Society of Civil Engineers. eds.,Computational Fluid Dynamics: Applications in Water, Wastewater and Stormwater Treatment, 224pp, 2019.
 
 OpenFOAM 2.3.0: Multiphase modeling, Predictor-corrector semi-implicit MULES, Feb. 17, 2014 blog at openfoam.org.
+
+Schulze, Lydia; Thorenz, Carsten (2014): The multiphase capabilities of the CFD toolbox for hydraulic applications. In: Lehfeldt, Rainer, Koppman, Rebekka (Hg.): ICHE 2014 Proc. of the 11th Conf. on hydroscience and engineering. Karlsruhe: Bundesanstalt fur Wasserbau. S. 1007-1016. https://henry.baw.de/bitstream/20.500.11970/99530/1/14_06.pdf
 
 Young, D.Y., Munson, B. R., Okiishi, T.M. A brief introduction to fluid mechanics, 3rd edition, John Wiley and Sons, 2004.
 
