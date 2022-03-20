@@ -188,7 +188,7 @@ in the literature.
 Flow-3D is a commercial package focused on the free surface interface. 
 ANSYS Fluent commercial package has also been used. This is an illustrative literature review, not mean to be exhaustive.
 
-#OpenFoam studies
+## OpenFoam studies
 
 1. Model development in OpenFOAM to predict spillway jet regimes, J. Applied Water Engineering and Research (2015), Y. Yang, M. Politano, R. Laughery and L. Weber.
 
@@ -197,15 +197,15 @@ OpenFOAM using LES and detached eddy simulation was used to compare reduced scal
     Solver: interFoam  (VOF)
     Turbulence closure: LES with detached eddy simulation
     
-# Flow-3D studies    
+## Flow-3D studies    
 Chanel, P.G. and J. Doering, Assessment of spillway modeling using computational fluid dynamics, Canadian Journal of Civil engineering 35(12), 2008.
 The Flow-3D package is used to simulate discharge and simulations are compared to physical models.
 
 
-# ANSYS Fluent studies
+## ANSYS Fluent studies
 General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. Arunkumar and S.P. Simmovic, Report no. 098,oct 2017.
 
-# Comparing OpenFOAM with FLOW-3D
+## Comparing OpenFOAM with FLOW-3D
 1. OpenFOAM vs. FLOW-3D: A comparative study of vertical slot fishway modeling, Ecological Engineering (174) 2022, J.F. Fuentes-Perez, A.L. Quaresma, A. Pinheiro, F. J. Sanz-Ronda.
   Solver: interFoam (VOF)
   turbulence closure: LES
@@ -216,18 +216,19 @@ General Methodology for developing a CFD model for studying spillway hydraulics 
   A classic hydraulic jump (Froude number 1 = 6) and Reynolds number 1 of 210,000 is simulated with both OpenFOAM and FLOW-3D and compared to experimental data designed for this purpose. THe conclusion is that both CFD codes represent the hydraulic jump variables accurately. There are differences in velocity distribution and pressure fluctuation differences but in general agrees well.
 
 ## Conclusion
-This tutorial of modeling open channel flow in OpenFoam consisted of three parts: (1) an introduction to key issues in open channel flow that are different than other engineering fluid problems, (2) sensitivity cases results and discussion
+This tutorial of modeling open channel flow in OpenFoam consisted of three parts: (1) an introduction to key issues in open channel flow that are different than other engineering fluid problems, (2) sensitivity case results and discussion
 using the two tutorial open channel flow cases damBreak and weirOverflow that come with OpenFoam and (3) a literature review of recent environmental and hydraulic applications that use OpenFlow, or commercial packages Flow-3D and Fluent. These range from modeling hydraulic jumps
 to spillway hydraulics to ecological fishway modeling.
 
 One problem in adopting OpenFoam for environmental applications
 is that current hydraulic engineers use 1D or 2D models such as HEC-RAS which use depth averaged velocity as the variable of interest,
-and water depth. These variables are not automatically provided in OpenFoam output. This problem is discussed in Leakey (2019)
+and water depth. The equations solved are the shallow water equations which depend on the shallow water approximation, where the depth is much less than the characteristic length scale. These variables are not automatically provided in OpenFoam output. This problem is discussed in Leakey (2019)
 and Schulze and Thorenz (2014). Also some boundary conditions are not as easily implemented in OpenFoam as HEC-RAS models (Leakey 2019).
-A toolbox is mentioned in Schulze and Thorenz but it is not currently public to my knowledge.
+A toolbox is mentioned in Schulze and Thorenz but it is not currently public. 
 One of the advantages to the Flow-3D commercial package is that the water free surface is output.
 
-Since OpenFoam is open source and runs on a laptop, a module could be developed for environmental, civil and coastal engineering undergraduate students as a learning device. This module may compare simpler 1D models to the more complicated problems that OpenFoam can handle.
+
+Since OpenFoam is open source and runs on a laptop, a module could be developed for environmental, civil and coastal engineering undergraduate students as a learning device. This module may compare simpler 1D problems to the more complicated problems that OpenFoam can handle.
 Thus the students could learn modeling judgement as to when a 1D model is sufficient versus 2D modeling using depth average velocities
 or the 3D OpenFoam with turbulence modeling.
 
