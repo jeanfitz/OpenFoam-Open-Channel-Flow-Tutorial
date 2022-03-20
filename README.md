@@ -164,8 +164,8 @@ A mesh refinement run was made using the Crank Nicolson time scheme at 0.9 weigh
 implicit method but is second order accurate. Although we tried to make a faster simulation, the simulation time of 834 seconds was a bit slower
 than the Euler mesh refinement case with dt=0.001, which is explicit, at 761 seconds. We may want to try a few more experiments to be sure.
 
-A screenshot of alpha.water at t=0.5 seconds:
-![CrankNicolson](damBreak_mesh_time_pt5)
+A screenshot of alpha.water phase fraction (dimensionless) at t=0.5 seconds:
+![CrankNicolson](damBreak_mesh_time_pt5.png)
 
 2. weirOverflow
   This tutorial uses a turbulence model, kEpsilon (k-e) two equation model.
@@ -213,7 +213,23 @@ General Methodology for developing a CFD model for studying spillway hydraulics 
   
 2. Characterization of structural properties in high Reynolds hydraulic jump based on CFD and physical modeling approaches, J. Hydraulic Engineering (146) 12, 2020, J. F. Macian-Perez, A. Bayon, R. Garcia-Bartual, P. Amparo Lopez-Jimenez, F.J. Valles-Moran.
 3. 
-  A classic hydraulic jump (Froude number 1 = 6) and Reynolds number 1 of 210,000 is simulated with both OpenFOAM and FLOW-3D and compared to experimental data designed for this purpose. THe conclusion is that both CFD codes represent the hydraulic jump variables accurately. There is difference in velocity distributiona nd pressure fluctuation differences but in general
+  A classic hydraulic jump (Froude number 1 = 6) and Reynolds number 1 of 210,000 is simulated with both OpenFOAM and FLOW-3D and compared to experimental data designed for this purpose. THe conclusion is that both CFD codes represent the hydraulic jump variables accurately. There are differences in velocity distribution and pressure fluctuation differences but in general agrees well.
+
+## Conclusion
+This tutorial of modeling open channel flow in OpenFoam consisted of three parts: (1) an introduction to key issues in open channel flow that are different than other engineering fluid problems, (2) sensitivity cases results and discussion
+using the two tutorial open channel flow cases damBreak and weirOverflow that come with OpenFoam and (3) a literature review of recent environmental and hydraulic applications that use OpenFlow, or commercial packages Flow-3D and Fluent. These range from modeling hydraulic jumps
+to spillway hydraulics to ecological fishway modeling.
+
+One problem in adopting OpenFoam for environmental applications
+is that current hydraulic engineers use 1D or 2D models such as HEC-RAS which use depth averaged velocity as the variable of interest,
+and water depth. These variables are not automatically provided in OpenFoam output. This problem is discussed in Leakey (2019)
+and Schulze and Thorenz (2014). Also some boundary conditions are not as easily implemented in OpenFoam as HEC-RAS models (Leakey 2019).
+A toolbox is mentioned in Schulze and Thorenz but it is not currently public to my knowledge.
+One of the advantages to the Flow-3D commercial package is that the water free surface is output.
+
+Since OpenFoam is open source and runs on a laptop, a module could be developed for environmental, civil and coastal engineering undergraduate students as a learning device. This module may compare simpler 1D models to the more complicated problems that OpenFoam can handle.
+Thus the students could learn modeling judgement as to when a 1D model is sufficient versus 2D modeling using depth average velocities
+or the 3D OpenFoam with turbulence modeling.
 
 ### References
 Bayon-Barrachina and P.A. Lopez-Jimenez, Numerical analysis of hydraulic jumps using OpenFOAM, J. Hydroinformatics 17(4), 662-278, 2015.
