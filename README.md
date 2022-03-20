@@ -67,7 +67,8 @@ We focus on the **damBreak** tutorial and
 **weirOverflow**
 tutorial. We shall perform sensitivity analysis changing mesh, solver and other parts of the cases.
 
-3. Setting up open channel flow cases ###
+3. Setting up open channel flow cases
+
 Some additional information is needed in open channel flow.
 Because the interface between water and air is a free surface, we need to track this over time.
 A new variable (field) called alpha.water which denotes the phase fraction where alpha=1 is water and alpha=0 is air.
@@ -162,13 +163,19 @@ Instead we will try the CrankNicolson time scheme with dt=0.01 sec.
 # Crank Nicolson time scheme 
 A mesh refinement run was made using the Crank Nicolson time scheme at 0.9 weight, with dt=0.01. This time scheme is a combined explicit and
 implicit method but is second order accurate. Although we tried to make a faster simulation, the simulation time of 834 seconds was a bit slower
-than the Euler mesh refinement case with dt=0.001, which is explicit, at 761 seconds. We may want to try a few more experiments to be sure.
+than the Euler mesh refinement case with dt=0.001, which is explicit, at 761 seconds. We may want to try a few more experiments and take the average.
+
+Since the Crank Nicolson is part implicit this implies that iteration is required whereas Euler is explicit and iteration is not required.
+This points to a tradeoff where Crank Nicolson is second order accurate in time and can have a larger time step but is iterative (solve a set of equations),
+and Euler requires a smaller time step for stability due to Courant but is explicit so iteration is not required and is only first order time accurate. 
+However, the spatial accuracy is related to the mesh size and also has to be taken into account in addition to the time accuracy. In this case
+the mesh refinements are the same.
 
 A screenshot of alpha.water phase fraction (dimensionless) at t=0.5 seconds:
 ![CrankNicolson](damBreak_mesh_time_pt5.png)
 
 2. weirOverflow
-  This tutorial uses a turbulence model, kEpsilon (k-e) two equation model.
+  This tutorial uses a turbulence model, the kEpsilon (k-e) two equation model.
    * RAS 
    * turbulence model
    * k-\epsilon model   
@@ -193,9 +200,9 @@ ANSYS Fluent commercial package has also been used. This is an illustrative lite
 1. Model development in OpenFOAM to predict spillway jet regimes, J. Applied Water Engineering and Research (2015), Y. Yang, M. Politano, R. Laughery and L. Weber.
 
 OpenFOAM using LES and detached eddy simulation was used to compare reduced scale model results. Total dissolved gas (TDG) can result in gas bubble disease in affected fish. Predicting spillway jet regimes is required.
-    Preprocessing: Mesh: Gridgen V15 used to create grids.
-    Solver: interFoam  (VOF)
-    Turbulence closure: LES with detached eddy simulation
+    * Preprocessing: Mesh: Gridgen V15 used to create grids.
+    * Solver: interFoam  (VOF)
+    * Turbulence closure: LES with detached eddy simulation
     
 ## Flow-3D studies    
 Chanel, P.G. and J. Doering, Assessment of spillway modeling using computational fluid dynamics, Canadian Journal of Civil engineering 35(12), 2008.
