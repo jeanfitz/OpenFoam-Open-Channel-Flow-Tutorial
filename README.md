@@ -132,7 +132,7 @@ A drawback of VOF (volume of fluid method) is the delineation of the water surfa
 The free surface can be considered the level set of alpha=0.5.  
 
 # Mesh Refinement
-One test is to increase the mesh (mesh refinement).
+One test is to increase the mesh (mesh refinement) to see if the water surface is better delineated.
 
 We modify the blockMeshDict file to double the cells of the hex elements. We also check the mesh to make sure it is legal and we didn't make a mistake
 in modifying blockMeshDict file.
@@ -152,7 +152,7 @@ documentation is implicit, first order accurate, and transient.
 
 # Backward Time Scheme not allowed in two phase models
 
-Let us change the time discretization to dt=0.01 sec. 
+Let us change the time discretization to dt=0.01 sec for the mesh refinement case so that we might get a shorter simulation time.
 We use the backward time scheme which is implict, second order accurate, conditionally stable but not guaranteed boundedness.
 We modify the controlDict file to change the time step to dt=.01 sec and modify the fvSchemes file for ddtSchemes to backward.
 If we run interFoam with these specifications, we get an error message "only Euler and CrankNicolson schemes are supported,"
@@ -160,6 +160,12 @@ with some section of the code involving two phase models. This makes sense becau
 
 Instead we will try the CrankNicolson time scheme with dt=0.01 sec.
 # Crank Nicolson time scheme 
+A mesh refinement run was made using the Crank Nicolson time scheme at 0.9 weight, with dt=0.01. This time scheme is a combined explicit and
+implicit method but is second order accurate. Although we tried to make a faster simulation, the simulation time of 834 seconds was a bit slower
+than the Euler mesh refinement case with dt=0.001, which is explicit, at 761 seconds. We may want to try a few more experiments to be sure.
+
+A screenshot of alpha.water at t=0.5 seconds:
+![CrankNicolson](damBreak_mesh_time_pt5)
 
 2. weirOverflow
   This tutorial uses a turbulence model, kEpsilon (k-e) two equation model.
