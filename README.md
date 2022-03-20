@@ -132,7 +132,7 @@ alpha.water phase fraction (dimensionless) Time = 0.5 sec.
 A drawback of VOF (volume of fluid method) is the delineation of the water surface which is needed for depth averaged or other output variables of interest in certain hydraulic engineering applications.
 The free surface can be considered the level set of alpha=0.5.  
 
-# Mesh Refinement
+### Mesh Refinement
 One test is to increase the mesh (mesh refinement) to see if the water surface is better delineated.
 
 We modify the blockMeshDict file to double the cells of the hex elements. We also check the mesh to make sure it is legal and we didn't make a mistake
@@ -151,7 +151,7 @@ A screenshot here. alpha.water (interpolated) Time = 0.5 sec.
 The mesh refinement simulation took 761 seconds with dt=0.001 sec. The time discretization method is Euler, which according to the OpenFoam
 documentation is implicit, first order accurate, and transient.
 
-# Backward Time Scheme not allowed in two phase models
+### Backward Time Scheme not allowed in two phase models
 
 Let us change the time discretization to dt=0.01 sec for the mesh refinement case so that we might get a shorter simulation time.
 We use the backward time scheme which is implict, second order accurate, conditionally stable but not guaranteed boundedness.
@@ -160,14 +160,14 @@ If we run interFoam with these specifications, we get an error message "only Eul
 with some section of the code involving two phase models. This makes sense because backward time schemes are not guaranteed bounded.
 
 Instead we will try the CrankNicolson time scheme with dt=0.01 sec.
-# Crank Nicolson time scheme 
+### Crank Nicolson time scheme 
 A mesh refinement run was made using the Crank Nicolson time scheme at 0.9 weight, with dt=0.01. This time scheme is a combined explicit and
 implicit method but is second order accurate. Although we tried to make a faster simulation, the simulation time of 834 seconds was a bit slower
-than the Euler mesh refinement case with dt=0.001, which is explicit, at 761 seconds. We may want to try a few more experiments and take the average.
+than the Euler mesh refinement case with dt=0.001, which is explicit, at 761 seconds. 
 
 Since the Crank Nicolson is part implicit this implies that iteration is required whereas Euler is explicit and iteration is not required.
 This points to a tradeoff where Crank Nicolson is second order accurate in time and can have a larger time step but is iterative (solve a set of equations),
-and Euler requires a smaller time step for stability due to Courant but is explicit so iteration is not required and is only first order time accurate. 
+and Euler requires a smaller time step for stability but is explicit so iteration is not required and is only first order time accurate. 
 However, the spatial accuracy is related to the mesh size and also has to be taken into account in addition to the time accuracy. In this case
 the mesh refinements are the same.
 
@@ -189,13 +189,22 @@ where
    
 ![weirOverflow](weirtutorial.png)
 
+### Extracting the free surface
+In Leakey (2019) a function to extract the free surface using OpenFoam libraries was presented.
+Here we test this feature. The function is appended to the controlDict file. An isosurface of alpha.water = 0.5, i.e. the free surface, is created
+and the coordinates are interpolated by cell point. The library saves the file in a postprocessing directory under surfaces.
+We run **interFoam -postProcess** to create the files.
+
+In the 60 directory, for t=60 seconds, we find the file "alpha.water_freeSurface.raw."
+![freesurface](Freesurface.pdf)
+
 ### Environmental engineering applications using OpenFoam or other CFD package (Literature review)
 OpenFoam studies or studies comparing OpenFOAM and commercial CFD software in environmental and hydraulic engineering have recently increased
 in the literature.
 Flow-3D is a commercial package focused on the free surface interface. 
 ANSYS Fluent commercial package has also been used. This is an illustrative literature review, not mean to be exhaustive.
 
-## OpenFoam studies
+### OpenFoam studies
 
 1. Model development in OpenFOAM to predict spillway jet regimes, J. Applied Water Engineering and Research (2015), Y. Yang, M. Politano, R. Laughery and L. Weber.
 
@@ -204,22 +213,22 @@ OpenFOAM using LES and detached eddy simulation was used to compare reduced scal
     * Solver: interFoam  (VOF)
     * Turbulence closure: LES with detached eddy simulation
     
-## Flow-3D studies    
+### Flow-3D studies    
 Chanel, P.G. and J. Doering, Assessment of spillway modeling using computational fluid dynamics, Canadian Journal of Civil engineering 35(12), 2008.
 The Flow-3D package is used to simulate discharge and simulations are compared to physical models.
 
 
-## ANSYS Fluent studies
+### ANSYS Fluent studies
 General Methodology for developing a CFD model for studying spillway hydraulics using ANSYS Fluent, R. Arunkumar and S.P. Simmovic, Report no. 098,oct 2017.
 
-## Comparing OpenFOAM with FLOW-3D
+### Comparing OpenFOAM with FLOW-3D
 1. OpenFOAM vs. FLOW-3D: A comparative study of vertical slot fishway modeling, Ecological Engineering (174) 2022, J.F. Fuentes-Perez, A.L. Quaresma, A. Pinheiro, F. J. Sanz-Ronda.
   Solver: interFoam (VOF)
   turbulence closure: LES
   
   
 2. Characterization of structural properties in high Reynolds hydraulic jump based on CFD and physical modeling approaches, J. Hydraulic Engineering (146) 12, 2020, J. F. Macian-Perez, A. Bayon, R. Garcia-Bartual, P. Amparo Lopez-Jimenez, F.J. Valles-Moran.
-3. 
+
   A classic hydraulic jump (Froude number 1 = 6) and Reynolds number 1 of 210,000 is simulated with both OpenFOAM and FLOW-3D and compared to experimental data designed for this purpose. THe conclusion is that both CFD codes represent the hydraulic jump variables accurately. There are differences in velocity distribution and pressure fluctuation differences but in general agrees well.
 
 ## Conclusion
@@ -230,14 +239,14 @@ to spillway hydraulics to ecological fishway modeling.
 One problem in adopting OpenFoam for environmental applications
 is that current hydraulic engineers use 1D or 2D models such as HEC-RAS which use depth averaged velocity as the variable of interest,
 and water depth. The equations solved are the shallow water equations which depend on the shallow water approximation, where the depth is much less than the characteristic length scale. These variables are not automatically provided in OpenFoam output. This problem is discussed in Leakey (2019)
-and Schulze and Thorenz (2014). Also some boundary conditions are not as easily implemented in OpenFoam as HEC-RAS models (Leakey 2019).
+and Schulze and Thorenz (2014). Also some boundary conditions are not as easily implemented in OpenFoam (Leakey 2019).
 A toolbox is mentioned in Schulze and Thorenz but it is not currently public. 
-One of the advantages to the Flow-3D commercial package is that the water free surface is output.
+One of the advantages to the Flow-3D commercial package is that the water free surface is designed to be the variable of interest.
 
 
 Since OpenFoam is open source and runs on a laptop, a module could be developed for environmental, civil and coastal engineering undergraduate students as a learning device. This module may compare simpler 1D problems to the more complicated problems that OpenFoam can handle.
 Thus the students could learn modeling judgement as to when a 1D model is sufficient versus 2D modeling using depth average velocities
-or the 3D OpenFoam with turbulence modeling.
+or the 3D OpenFoam with turbulence modeling. 
 
 ### References
 Bayon-Barrachina and P.A. Lopez-Jimenez, Numerical analysis of hydraulic jumps using OpenFOAM, J. Hydroinformatics 17(4), 662-278, 2015.
