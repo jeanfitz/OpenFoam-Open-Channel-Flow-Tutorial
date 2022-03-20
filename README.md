@@ -196,7 +196,7 @@ and the coordinates are interpolated by cell point. The library saves the file i
 We run **interFoam -postProcess** to create the files.
 
 In the 60 directory, for t=60 seconds, we find the file "alpha.water_freeSurface.raw."
-![freesurface](Freesurface.pdf)
+![freesurf](Freesurf.png)
 
 ### Environmental engineering applications using OpenFoam or other CFD package (Literature review)
 OpenFoam studies or studies comparing OpenFOAM and commercial CFD software in environmental and hydraulic engineering have recently increased
