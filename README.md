@@ -1,6 +1,6 @@
 ![](0330211418a_resized.jpg) Mystic River near Alewife Brook. 
 # OpenFoam-Open-Channel-Flow-Tutorial 
-This tutorial describes simulating open channel flow in OpenFoam open source CFD package with environmental application.
+This tutorial describes simulating open channel flow in OpenFoam open source CFD package with a focus on environmental applications.
 It is important to keep in mind that CFD is one tool to study, design, or optimize environmental engineering applications.
 There are also physical models and in situ measurements.
 
@@ -13,19 +13,20 @@ Disadvantages of CFD
    * potential user error of software packages
 
 OpenFoam can easily be run on multiprocessors on a laptop or desktop, making transient 3D turbulence
-modeling widely available, either RAS or LES. As sensors become cheap and Internet of things data go online it will be useful to build
+modeling widely available, either RANS or LES. As sensors become cheap and Internet of things data go online it will be useful to build
 so-called digital twins of river, dam and stormwater systems. CFD models can help. Control of sensors and devices online are also becoming
 a reality in real urban hydraulic systems.
 
 ## Open channel flow
 Open channel flow is a distinct category of fluid flow (Young et al., Granger)
 where there is an interface between the water and atmosphere.
-The interface is not assumed constant and this category of flow is also called free surface flow. 
+The interface is not assumed constant and this type of flow is also called free surface flow. 
 This flow type includes many applications in environmental,
 coastal, hydraulic and ecological engineering such as dams, weirs, spillways, fish passages, and hydraulic structures. There is increased use of CFD
 in environmental engineering (Liu and Zhang 2019).
 Fluent and other commercial packages are available but OpenFoam is 
-free and is useful as the details and source can be modified by the user. 
+free and is useful as the details and source can be modified by the user. In Germany, there has been wide use
+of OpenFOAM for hydraulic applications (Schulze and Thorenz 2014).
 
 1. Physics of Open Channel Flow
 
