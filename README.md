@@ -120,8 +120,8 @@ transient cases.
 
 1. damBreak
 This case uses:
-   *laminar 
-   *interFoam multiphase solver
+   * laminar 
+   * interFoam multiphase solver
    
 In the damBreak case, since the column of water is initially at rest, the case is modeled in the laminar regime, since the Reynolds
 number is zero initially and assumed low. Therefore no turbulence model is used.
@@ -209,6 +209,7 @@ ANSYS Fluent commercial package has also been used. This is an illustrative lite
 1. Model development in OpenFOAM to predict spillway jet regimes, J. Applied Water Engineering and Research (2015), Y. Yang, M. Politano, R. Laughery and L. Weber.
 
 OpenFOAM using LES and detached eddy simulation was used to compare reduced scale model results. Total dissolved gas (TDG) can result in gas bubble disease in affected fish. Predicting spillway jet regimes is required.
+
     * Preprocessing: Mesh: Gridgen V15 used to create grids.
     * Solver: interFoam  (VOF)
     * Turbulence closure: LES with detached eddy simulation
