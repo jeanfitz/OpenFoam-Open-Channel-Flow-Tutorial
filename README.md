@@ -198,7 +198,13 @@ We run **interFoam -postProcess** to create the files.
 In the 60 directory, for t=60 seconds, we find the file "alpha.water_freeSurface.raw."
 ![freesurf](Freesurf.png)
 
-### Environmental engineering applications using OpenFoam or other CFD package (Literature review)
+### Changing the turbulence model to kOmega
+In many of the literature cases, a variety of turbulence models are run under RANS.
+The RANS (Reynolds average Navier Stokes) equations are still used but now we change the turbulence model from k-epsilon to k-omega.
+This is done by changing the constant/turbulenceProperties file. We also have kOmegaSST turbulence model.
+
+
+## Environmental engineering applications using OpenFoam or other CFD package (Literature review)
 OpenFoam studies or studies comparing OpenFOAM and commercial CFD software in environmental and hydraulic engineering have recently increased
 in the literature.
 Flow-3D is a commercial package focused on the free surface interface. 
